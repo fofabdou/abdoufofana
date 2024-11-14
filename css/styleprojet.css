@@ -1,0 +1,87 @@
+/* Style des boutons "Voir" et "En savoir plus" */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-view, .btn-more {
+    padding: 5px 15px;
+    color: white;
+    background-color: #2c98f0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-view:hover, .btn-more:hover {
+    background-color: #1e6cb1;
+}
+
+
+#portfolio-flters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#portfolio-flters li {
+    list-style: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #fff;
+    background: #3a3a3b;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#portfolio-flters li.filter-active {
+    background: #d1a000;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.portfolio-item {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.portfolio-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.5);
+}
+
+.portfolio-wrap img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-wrap:hover .portfolio-links {
+    opacity: 1;
+}
