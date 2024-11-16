@@ -214,7 +214,7 @@ figure figcaption {
 .container-wrap {
   max-width: 1170px;
   margin: 0 auto;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 #colorlib-main {
@@ -1026,7 +1026,7 @@ body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
 #colorlib-counter {
   position: relative;
   clear: both;
-  margin-bottom: 5em; }
+  margin-bottom: 3em; }
 
 .colorlib-counters {
   padding: 3em 0;

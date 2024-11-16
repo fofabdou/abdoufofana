@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio Abdou Fofana | Étudiant BTS SIO - Systèmes et Réseaux</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Découvrez le portfolio d'Abdou Fofana, étudiant en BTS SIO avec une spécialisation en Systèmes et Réseaux. Explorez ses compétences, projets, et parcours académique." />
+    <meta name="keywords" content="Abdou Fofana, BTS SIO, Systèmes et Réseaux, portfolio, compétences, projets" />
+    <meta name="author" content="Abdou Fofana" />
+</head>
+<body>
+<section id="portfolio-details" class="portfolio-details">
+    <div class="background-animation" id="particles-js"></div>
+    <div class="container d-flex" style="height: 100vh; position: relative; z-index: 1;">
+        <!-- Colonne pour les images du projet (à gauche, occupant 50% de l'écran) -->
+        <div class="col-lg-6 d-flex align-items-center">
+            <div class="portfolio-images">
+                <img src="images/portfolio1.png" alt="Image 1 du projet" style="width: 100%; border-radius: 8px;">
+            </div>
+        </div>
+
+        <!-- Colonne pour les informations et la description du projet (à droite, occupant 50% de l'écran) -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center" style="padding: 20px;">
+            <div class="portfolio-info" style="background-color: rgba(248, 249, 250, 0.9); padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <h3>Informations du Projet :</h3>
+                <ul>
+                    <li><strong>Catégorie</strong>: Site vitrine Portfolio</li>
+                    <li><strong>Langages utilisés</strong>: HTML, CSS, JavaScript</li>
+                    <li><strong>Outils</strong>: PhpStorm, GitHub, ChatGPT</li>
+                    <li><strong>Date du projet</strong>: 2024-2025</li>
+                    <li><strong>Site internet</strong>: <a href="https://abdoufofana.com" target="_blank">https://abdoufofana.com</a></li>
+                </ul>
+            </div>
+
+            <div class="portfolio-description mt-4">
+                <h3 style="text-decoration: underline;">Présentation du Projet</h3>
+                <p>
+                    Dans le cadre de ma formation en BTS Services Informatiques aux Organisations, j'ai entrepris la conception d'un site portfolio destiné à présenter mes compétences, mes réalisations et mon parcours professionnel. Ce projet a une importance particulière, car il reflète non seulement mes acquis académiques mais également mes compétences professionnelles et techniques, illustrant ainsi ma capacité à concevoir et développer un site web complet de manière autonome.
+                </p>
+                <p>
+                    Ce portfolio est conçu pour être une vitrine professionnelle qui centralise l'ensemble de mes projets, mes certifications et mes expériences, offrant ainsi un aperçu structuré et intuitif de mes qualifications. Ce projet m'a permis de renforcer mes compétences en développement web, tout en intégrant des aspects d'ergonomie et de design afin de créer une expérience utilisateur agréable et professionnelle.
+                </p>
+                <h3 style="text-decoration: underline;">Synthèse</h3>
+                <p>
+                    La réalisation de ce projet a été un exercice enrichissant, qui m’a permis de mettre en pratique un ensemble de compétences acquises lors de ma formation, notamment en matière de gestion de projet, de développement front-end, et d’optimisation pour le web. J'ai pu gérer efficacement les différentes étapes du projet, de la planification et de la conception à l'intégration des fonctionnalités avancées, en respectant les bonnes pratiques de développement.
+                </p>
+                <p>
+                    Ce portfolio a également été un tremplin pour développer mon autonomie et mon sens de l’organisation. J’ai su m’adapter aux défis techniques et créatifs pour produire un site fonctionnel et attrayant. En somme, ce projet m’a non seulement permis d’acquérir de nouvelles compétences techniques, mais il m’a également préparé à relever de futurs défis professionnels dans le domaine du développement web.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Styles pour l'animation et la disposition -->
+<style>
+    /* Styles pour l'animation de fond */
+    .background-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* Style pour occuper la moitié de l'écran pour chaque colonne */
+    #portfolio-details .container {
+        display: flex;
+        height: 100vh;
+        position: relative;
+    }
+    #portfolio-details .col-lg-6 {
+        flex: 1;
+    }
+    /* Ajouter une légère marge entre l'image et le texte */
+    .portfolio-info ul {
+        list-style: none;
+        padding: 0;
+    }
+    .portfolio-info ul li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- Ajout d'une section pour l'animation en fond -->
+<div id="animated-background"></div>
+
+<!-- Styles personnalisés pour l'affichage des miniatures et l'animation -->
+<style>
+    /* Style pour le fond animé */
+    #animated-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(45deg, #1c92d2, #f2fcfe);
+        background-size: 400% 400%;
+        animation: gradientBackground 15s ease infinite;
+    }
+
+    /* Animation de gradient */
+    @keyframes gradientBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .portfolio-images img {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .portfolio-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<!-- Particles.js pour l'animation de particules -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("animated-background", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false
+            },
+            "size": {
+                "value": 3,
+                "random": true
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 3,
+                "direction": "none",
+                "random": false
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+</body>
+</html>

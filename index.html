@@ -73,16 +73,37 @@
 						<li><a href="#" data-nav-section="experience"><i class="icon-briefcase"></i> Expèrience Pro</a></li>
 						<li><a href="#" data-nav-section="work"><i class="icon-code"></i> Projets</a></li>
 						<li><a href="#" data-nav-section="bts"><i class="icon-building"></i> BTS SIO</a></li>
-						<li>
-							<a href="#" onclick="toggleSubmenu(event)"><i class="icon-book"></i> Épreuves</a>
-							<ul class="submenu" style="display: none;">
-								<li><a href="#" data-nav-section="e4"><i class="icon-file-text"></i> Épreuve E5</a></li>
-								<li><a href="#" data-nav-section="e5"><i class="icon-file-text"></i> Épreuve E6</a></li>
-							</ul>
-						</li>
+						<div>
+							<li>
+								<a href="#" onclick="toggleSubmenu(event)"><i class="icon-book"></i> Épreuves</a>
+								<ul class="submenu" style="display: none;">
+									<li><a href="E5.html" target="_blank"><i class="icon-file-text"></i> Épreuve E5</a></li>
+									<li><a href="e6.html"><i class="icon-file-text"></i> Épreuve E6</a></li>
+								</ul>
+							</li>
+							<script>
+								// Fonction pour afficher/masquer les sous-menus
+								function toggleSubmenu(event) {
+									event.preventDefault(); // Empêche le lien par défaut de s'exécuter
+									const submenu = event.target.nextElementSibling; // Sélectionne le sous-menu associé
+									if (submenu && submenu.classList.contains('submenu')) {
+										const isVisible = submenu.style.display === 'block';
+										submenu.style.display = isVisible ? 'none' : 'block'; // Basculer entre afficher et masquer
+									}
+								}
+							</script>
+						</div>
+
 						<li><a href="#" data-nav-section="contact"><i class="icon-envelope"></i> Contact</a></li>
 					</ul>
 				</div>
+					<script>
+						document.querySelectorAll('.submenu > li > a').forEach(link => {
+							link.addEventListener('click', () => {
+								window.location.href = link.getAttribute('href');
+							});
+						});
+					</script>
 			</nav>
 				<!-- JavaScript pour le menu déroulant -->
 				<script>
@@ -97,9 +118,7 @@
 					}
 				</script>
 
-
-
-			<div class="colorlib-footer">
+				<div class="colorlib-footer">
 				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
@@ -116,7 +135,7 @@
 		<div id="colorlib-main">
 			<div>
 				<!-- Particules et Image de Fond -->
-				<div style="background-image: url('images/accueil.jpg'); background-size: cover; background-position: center; width: 100vw; height: 100vh; position: relative;" id="particles-js">
+				<div data-section="home" style="background-image: url('images/accueil.jpg'); background-size: cover; background-position: center; width: 100vw; height: 100vh; position: relative;" id="particles-js">
 						<div id="hero">
 							<!-- Contenu Centré avec un Fond Semi-transparent -->
 							<div style="position: absolute; top: 50%; left: 35%; transform: translate(-50%, -50%); text-align: center; color: #ffffff; background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 8px;">
@@ -284,114 +303,7 @@
 				</section>
 
 			</section>
-
-
-
-		<!--	<section class="colorlib-services" data-section="services">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="colorlib-heading">Here are some of my expertise</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Innovative Ideas</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Application</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-layers2"></i>
-								</span>
-								<div class="desc">
-									<h3>Graphic Design</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Application</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
-
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="309" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Cups of coffee</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="356" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Clients</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Partners</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<!-- partie compétences -->
 			<section class="colorlib-skills" data-section="skills">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -719,6 +631,7 @@
 						</div>
 					</div>
 				</div>
+			</section>
 				<section class="colorlib-education" data-section="education">
 					<div class="colorlib-narrow-content">
 						<div class="row">
@@ -903,284 +816,260 @@
 				</section>
 
 
-				<section class="colorlib-work" data-section="work">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-								<span class="heading-meta">Mes Projets</span>
-								<h2 class="colorlib-heading animate-box">Mes Réalisations</h2>
+			<section class="colorlib-work" data-section="work">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Mes Projets</span>
+							<h2 class="colorlib-heading animate-box">Mes Réalisations</h2>
+						</div>
+					</div>
+					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12">
+							<p class="work-menu">
+								<span><a href="#" class="filter active" data-filter="*">Tous</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-site">Site Internet</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-helport">Projets en Commun</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-smartcity">Travaux Pratiques</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-tableau">Tableau de compétence</a></span>
+							</p>
+						</div>
+					</div>
+
+					<div class="row portfolio-container">
+						<!-- Exemple de projet Site Internet -->
+						<div class="col-md-4 portfolio-item filter-site" style="display: block;">
+							<div class="project-card">
+								<h3>Portfolio Personnel</h3>
+								<div class="project-image-container">
+									<img src="images/portfolio.png" alt="Portfolio Personnel" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/portfolio.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/portfolio.png', 'Ce projet de portfolio personnel présente mes compétences et mes réalisations de manière dynamique et interactive. Conçu comme un outil de présentation professionnelle, il met en avant mes projets et mes compétences techniques, tout en illustrant mon aptitude à organiser et structurer des informations de manière efficace. Un projet clé de mon parcours en BTS SIO.');"><i class="icon-eye"></i> Voir</a>
+									<a href="page_site_portfolio.html" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
+								</div>
 							</div>
 						</div>
-						<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-							<div class="col-md-12">
-								<p class="work-menu">
-									<span><a href="#" class="filter" data-filter="*">Tous</a></span>
-									<span><a href="#" class="filter" data-filter=".filter-site">Site Internet</a></span>
-									<span><a href="#" class="filter" data-filter=".filter-helport">projets</a></span>
-									<span><a href="#" class="filter" data-filter=".filter-smartcity">Travaux Pratiques</a></span>
-								</p>
+						<div class="col-md-4 portfolio-item filter-helport" style="display: block;">
+							<div class="project-card">
+								<h3>Projet Véliko</h3>
+								<div class="project-image-container">
+									<img src="pdf/version1Veliko.png" alt="Portfolio Personnel" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="pdf/version1Veliko.png" class="btn-view" onclick="event.preventDefault(); openPopup('pdf/version1Veliko.png', 'Projet réaliser en mode collaboration avec les dev afin de déployer l\'application web');"><i class="icon-eye"></i> Voir</a>
+									<a href="pdf/Compte%20rendu%20veliko%20version%201.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
+								</div>
 							</div>
 						</div>
 
-						<div class="row portfolio-container">
-							<!-- Catégorie Site Internet -->
-							<div class="col-md-6 portfolio-item filter-site animate-box" data-animate-effect="fadeInLeft">
-								<div class="project" style="background-image: url(images/img-1.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Portfolio Personnel</a></h3>
-											<div class="buttons">
-												<a href="images/site1.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
+						<!-- Autres exemples de projets -->
+						<div class="col-md-4 portfolio-item filter-helport" style="display: block;">
+							<div class="project-card">
+								<h3>Projet @tech Innovation</h3>
+								<div class="project-image-container">
+									<img src="images/projet/projet1.png" alt="Projet 1 @tech Innovation" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/projet/projet1.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/projet/projet1.png', 'Le projet Tech Innov a été réalisé dans le cadre de ma formation en SISR et vise à concevoir une infrastructure réseau complète pour une entreprise technologique en croissance rapide. Ce projet a été une occasion d\'appliquer mes compétences en configuration de réseaux, en sécurité informatique et en gestion des serveurs.');"><i class="icon-eye"></i> Voir</a>
+									<a href="images/projet/TOPOLOGIE.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
 								</div>
 							</div>
-							<div class="col-md-6 portfolio-item filter-site animate-box" data-animate-effect="fadeInRight">
-								<div class="project" style="background-image: url(images/img-2.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Site Vitrine Entreprise</a></h3>
-											<div class="buttons">
-												<a href="images/site2.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="col-md-4 portfolio-item filter-tableau" style="display: block;">
+							<div class="project-card">
+								<h3>Tableau de compétences</h3>
+								<div class="project-image-container">
+									<img src="pdf/img.png" alt="Portfolio Personnel" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="pdf/img.png" class="btn-view" onclick="event.preventDefault(); openPopup('pdf/img.png', 'Ce tableau permet de visualiser concrètement les compétences que j\'ai acquises, les domaines dans lesquels je me suis amélioré, et les objectifs que je dois encore atteindre pour consolider mes aptitudes.');"><i class="icon-eye"></i> Voir</a>
+									<a href="pdf/Synthèse%20Epreuve%20E5%202025.xlsx" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
 								</div>
 							</div>
-							<div class="col-md-6 portfolio-item filter-site animate-box" data-animate-effect="fadeInTop">
-								<div class="project" style="background-image: url(images/img-3.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Blog Personnel</a></h3>
-											<div class="buttons">
-												<a href="images/site3.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="col-md-4 portfolio-item filter-smartcity" style="display: block;">
+							<div class="project-card">
+								<h3>RIP & OSPF</h3>
+								<div class="project-image-container">
+									<img src="pdf/RIP.png" alt="Portfolio Personnel" class="img-fluid">
 								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-site animate-box" data-animate-effect="fadeInBottom">
-								<div class="project" style="background-image: url(images/img-4.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">E-commerce</a></h3>
-											<div class="buttons">
-												<a href="images/site4.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Catégorie Projet -->
-							<div class="col-md-6 portfolio-item filter-helport animate-box" data-animate-effect="fadeInLeft">
-								<div class="project" style="background-image: url(images/projet/projet1.png);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 1 @tech Innovation</a></h3>
-											<div class="buttons">
-												<a href="images/projet/projet1.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/projet/projet1.png');"><i class="icon-eye"></i> Voir</a>
-												<a href="images/projet/TOPOLOGIE.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-helport animate-box" data-animate-effect="fadeInRight">
-								<div class="project" style="background-image: url(images/img_bg_1.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 2 Help-ORT</a></h3>
-											<div class="buttons">
-												<a href="images/helport2.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-helport animate-box" data-animate-effect="fadeInTop">
-								<div class="project" style="background-image: url(images/img_bg_2.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 3 Help-ORT</a></h3>
-											<div class="buttons">
-												<a href="images/helport3.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-helport animate-box" data-animate-effect="fadeInBottom">
-								<div class="project" style="background-image: url(images/img-3.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 4 Help-ORT</a></h3>
-											<div class="buttons">
-												<a href="images/helport4.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Catégorie Smart City -->
-							<div class="col-md-6 portfolio-item filter-smartcity animate-box" data-animate-effect="fadeInLeft">
-								<div class="project" style="background-image: url(images/img_bg_3.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 1 Smart City</a></h3>
-											<div class="buttons">
-												<a href="images/smartcity1.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-smartcity animate-box" data-animate-effect="fadeInRight">
-								<div class="project" style="background-image: url(images/img_bg_2.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 2 Smart City</a></h3>
-											<div class="buttons">
-												<a href="images/smartcity2.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-smartcity animate-box" data-animate-effect="fadeInTop">
-								<div class="project" style="background-image: url(images/img-1.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 3 Smart City</a></h3>
-											<div class="buttons">
-												<a href="images/smartcity3.jpg" class="btn-view"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 portfolio-item filter-smartcity animate-box" data-animate-effect="fadeInBottom">
-								<div class="project" style="background-image: url(images/img-2.jpg);">
-									<div class="desc">
-										<div class="con">
-											<h3><a href="project-details.html">Projet 4 Smart City</a></h3>
-											<div class="buttons">
-												<a href="images/projet/projet1.png" class="btn-view" data-description="Description du projet de Portfolio personnel" onclick="event.preventDefault(); openPopup('images/projet/projet1.png', 'Projet @tech innovation realiser dans le cadre ...');"><i class="icon-eye"></i> Voir</a>
-												<a href="project-details.html" class="btn-more"><i class="icon-link"></i> En savoir plus</a>
-											</div>
-										</div>
-									</div>
+								<div class="buttons">
+									<a href="pdf/RIP.png" class="btn-view" onclick="event.preventDefault(); openPopup('pdf/RIP.png', 'Travaux réalisés sur des matériaux physiques (routeurs, pcs) afin de mieux cerner les protocols de routage dynamique et la différence entre routage statique et dynamique');"><i class="icon-eye"></i> Voir</a>
+									<a href="pdf/Abdou_FOFANA%20Compte%20Rendu%20routage%20statique%20et%20OSPF.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> documentation</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- Conteneur du pop-up pour l'affichage des images -->
+				</div>
+			</section>
 
-					<style>
-						/* Style pour le pop-up */
-						.popup-overlay {
-							display: none;
-							position: fixed;
-							top: 0;
-							left: 0;
-							width: 100%;
-							height: 100%;
-							background-color: rgba(0, 0, 0, 0.8);
-							z-index: 9999;
-						}
+			<!-- Popup HTML Structure -->
+			<div id="imagePopup" class="popup-overlay">
+				<div class="popup-content">
+					<span class="close-btn" onclick="closePopup()">&times;</span>
+					<img id="popupImage" src="" alt="Image" style="width: 100%; height: auto;">
+					<p id="popupText" style="color: #333; text-align: center; margin-top: 15px;"></p>
+				</div>
+			</div>
 
-						.popup-content {
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -50%);
-							background-color: #fff;
-							padding: 20px;
-							border-radius: 8px;
-							max-width: 80%;
-						}
+			<!-- Styles CSS -->
+			<style>
+				.work-menu span a {
+					color: #ffd700;
+					font-weight: bold;
+					margin: 0 6px;
+					text-decoration: none;
+					padding: 6px 6px;
+					background-color: #333;
+					border-radius: 5px;
+				}
+				.portfolio-container {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 20px;
+				}
 
-						.close-btn {
-							position: absolute;
-							top: 10px;
-							right: 10px;
-							font-size: 24px;
-							cursor: pointer;
-							color: #333;
-						}
-					</style>
-					<script>
-						// Fonction pour afficher le pop-up
-						function openPopup(imageSrc) {
-							document.getElementById("popupImage").src = imageSrc;
-							document.getElementById("imagePopup").style.display = "block";
-						}
+				.portfolio-item {
+					position: relative;
+					overflow: hidden;
+					border-radius: 8px;
+					box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+				}
+				/* Projet Card Styling */
+				.project-card {
+					position: relative;
+					cursor: pointer;
+					transition: transform 0.3s ease;
+				}
+				.project-card .overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.6);
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					opacity: 0;
+					transition: opacity 0.3s ease;
+				}
+				.project-card img {
+					width: 100%;
+					height: auto;
+					display: block;
+					transition: transform 0.3s ease;
+				}
+				.project-card:hover img {
+					transform: scale(1.1);
+				}
+				.project-card:hover .overlay {
+					opacity: 1;
+				}
+				.overlay h3 {
+					color: #fff;
+					font-size: 1.5em;
+					margin-bottom: 10px;
+					text-align: center;
+				}
+				.buttons {
+					display: flex;
+					gap: 10px;
+				}
 
-						// Fonction pour fermer le pop-up
-						function closePopup() {
-							document.getElementById("imagePopup").style.display = "none";
-						}
+				.buttons a {
+					display: inline-block;
+					padding: 10px 15px;
+					color: #fff;
+					background: #007bff;
+					border-radius: 4px;
+					text-decoration: none;
+					font-size: 1em;
+					text-align: center;
+				}
 
-						// Ajoute un événement pour chaque bouton "Voir"
-						document.querySelectorAll('.btn-view').forEach(function(button) {
-							button.addEventListener('click', function(event) {
-								event.preventDefault();
-								const imageSrc = button.getAttribute('href');
-								openPopup(imageSrc);
-							});
+				.buttons a i {
+					margin-right: 5px;
+				}
+
+				.btn-view {
+					background: #28a745;
+				}
+
+				.btn-more {
+					background: #17a2b8;
+				}
+
+				/* Popup Styles */
+				.popup-overlay {
+					display: none;
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 0, 0, 0.8);
+					z-index: 9999;
+				}
+				.popup-content {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background-color: #fff;
+					padding: 20px;
+					border-radius: 8px;
+					max-width: 80%;
+				}
+				.close-btn {
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					font-size: 24px;
+					cursor: pointer;
+					color: #333;
+				}
+			</style>
+
+			<!-- JavaScript pour le filtrage et le popup -->
+			<script>
+				document.querySelectorAll('.filter').forEach(function(filterLink) {
+					filterLink.addEventListener('click', function(e) {
+						e.preventDefault();
+						document.querySelectorAll('.filter').forEach(function(link) {
+							link.classList.remove('active');
 						});
-					</script>
-					<div id="imagePopup" class="popup-overlay">
-						<div class="popup-content">
-							<span class="close-btn" onclick="closePopup()">&times;</span>
-							<img id="popupImage" src="" alt="Image" style="width: 100%; height: auto;">
-							<p id="popupText" style="color: #333; text-align: center; margin-top: 15px;"></p>
-						</div>
-					</div>
-					<script>
-						// Fonction pour afficher le pop-up avec l'image et le texte
-						function openPopup(imageSrc, text) {
-							document.getElementById("popupImage").src = imageSrc;
-							document.getElementById("popupText").textContent = text; // Ajoute le texte sous l'image
-							document.getElementById("imagePopup").style.display = "block";
-						}
+						this.classList.add('active');
 
-						// Fonction pour fermer le pop-up
-						function closePopup() {
-							document.getElementById("imagePopup").style.display = "none";
-						}
-
-						// Ajoute un événement pour chaque bouton "Voir"
-						document.querySelectorAll('.btn-view').forEach(function(button) {
-							button.addEventListener('click', function(event) {
-								event.preventDefault();
-								const imageSrc = button.getAttribute('href');
-								const description = button.getAttribute('data-description'); // Récupère la description de l'attribut data
-								openPopup(imageSrc, description);
-							});
+						const filterValue = this.getAttribute('data-filter');
+						document.querySelectorAll('.portfolio-item').forEach(function(item) {
+							if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
+								item.style.display = 'block';
+							} else {
+								item.style.display = 'none';
+							}
 						});
-					</script>
+					});
+				});
+				document.querySelector('.filter[data-filter="*"]').click();
 
+				function openPopup(imageSrc, text) {
+					document.getElementById("popupImage").src = imageSrc;
+					document.getElementById("popupText").textContent = text;
+					document.getElementById("imagePopup").style.display = "block";
+				}
 
-
-				</section>
+				function closePopup() {
+					document.getElementById("imagePopup").style.display = "none";
+				}
+			</script>
 				<section class="colorlib-bts-sio" data-section="bts">
 					<div class="colorlib-narrow-content">
 						<div class="row">
 							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-								<h2 class="colorlib-heading animate-box">BTS SIO - Services Informatiques aux Organisations</h2>
+								<h2 class="colorlib-heading">BTS SIO - Services Informatiques aux Organisations</h2>
 							</div>
 						</div>
 						<!-- Présentation de la Formation -->
@@ -1191,38 +1080,119 @@
 							</div>
 						</div>
 
-						<!-- Options du BTS SIO -->
-						<div class="row animate-box" data-animate-effect="fadeInRight">
-							<div class="col-md-12">
-								<h3><i class="icon-cogs" style="color: #007bff;"></i> Options de Spécialisation</h3>
-								<ul>
-									<li><strong><i class="icon-server" style="color: #007bff;"></i> SISR</strong> - Solutions d'Infrastructure, Systèmes et Réseaux : Gère et maintient les infrastructures réseaux et systèmes d’une organisation.</li>
-									<li><strong><i class="icon-laptop" style="color: #007bff;"></i> SLAM</strong> - Solutions Logicielles et Applications Métiers : Développement logiciel et conception d'applications adaptées aux besoins des entreprises.</li>
-								</ul>
-							</div>
-						</div>
+						<section class="bts-options">
+							<h2>Le BTS SIO propose deux spécialités :</h2>
+							<div class="options-container">
+								<!-- Bloc Option SISR -->
+								<div class="option-block" id="option-sisr">
+									<div class="front">
+										<h3>Option SISR</h3>
+										<img src="images/network.png" alt="Option SISR">
+									</div>
+									<div class="back">
+										<h3>Option SISR</h3>
+										<p>
+											L'option SISR (Solutions d'infrastructure, systèmes et réseaux) forme les étudiants aux métiers de la gestion d'infrastructure réseau. Elle leur permet d'acquérir des compétences dans la mise en place, la sécurisation et la maintenance des réseaux et systèmes d'information d’une entreprise.
+										</p>
+										<h4>Débouchés :</h4>
+										<ul>
+											<li>Administrateur systèmes et réseaux</li>
+											<li>Technicien d'infrastructure</li>
+											<li>Support systèmes et réseaux</li>
+											<li>Pilote d'exploitation</li>
+										</ul>
+									</div>
+								</div>
 
-						<!-- Débouchés Professionnels pour SISR et SLAM -->
-						<div class="row animate-box" data-animate-effect="fadeInLeft">
-							<div class="col-md-6">
-								<h3><i class="icon-briefcase" style="color: #007bff;"></i> Débouchés Professionnels - SISR</h3>
-								<ul>
-									<li><i class="icon-user" style="color: #007bff;"></i> Technicien Réseaux</li>
-									<li><i class="icon-shield" style="color: #007bff;"></i> Administrateur Systèmes et Réseaux</li>
-									<li><i class="icon-network-wired" style="color: #007bff;"></i> Responsable Infrastructure</li>
-									<li><i class="icon-life-ring" style="color: #007bff;"></i> Support Technique et Assistance Informatique</li>
-								</ul>
+								<!-- Bloc Option SLAM -->
+								<div class="option-block" id="option-slam">
+									<div class="front">
+										<h3>Option SLAM</h3>
+										<img src="images/dev.png" alt="Option SLAM">
+									</div>
+									<div class="back">
+										<h3>Option SLAM</h3>
+										<p>
+											L'option SLAM (Solutions logicielles et applications métiers) prépare les étudiants à la conception et au développement d'applications. Ils acquièrent les compétences nécessaires pour analyser les besoins des utilisateurs, coder des solutions logicielles, et gérer des bases de données.
+										</p>
+										<h4>Débouchés :</h4>
+										<ul>
+											<li>Développeur d'applications</li>
+											<li>Analyste programmeur</li>
+											<li>Concepteur d'applications métiers</li>
+											<li>Chargé de projets logiciels</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<h3><i class="icon-briefcase" style="color: #007bff;"></i> Débouchés Professionnels - SLAM</h3>
-								<ul>
-									<li><i class="icon-code" style="color: #007bff;"></i> Développeur d’Applications</li>
-									<li><i class="icon-database" style="color: #007bff;"></i> Concepteur de Bases de Données</li>
-									<li><i class="icon-laptop-code" style="color: #007bff;"></i> Analyste Programmeur</li>
-									<li><i class="icon-pencil-alt" style="color: #007bff;"></i> Développeur Web et Mobile</li>
-								</ul>
-							</div>
-						</div>
+						</section>
+
+						<style>
+							.bts-options {
+								text-align: center;
+								padding: 40px;
+								background-color: #f0f4f8;
+							}
+							.options-container {
+								display: flex;
+								justify-content: center;
+								gap: 20px;
+							}
+							.option-block {
+								width: 400px;
+								height: 400px; /* Augmenter la hauteur pour afficher plus de texte */
+								perspective: 1000px;
+								cursor: pointer;
+								position: relative;
+							}
+							.option-block .front, .option-block .back {
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								backface-visibility: hidden;
+								border-radius: 8px;
+								overflow: hidden;
+								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+								transition: transform 0.6s;
+							}
+							.option-block .front {
+								background-color: #e2efff;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+							}
+							.option-block .front h3 {
+								font-size: 24px;
+								margin-bottom: 10px;
+							}
+							.option-block .back {
+								background-color: #d1e7fd;
+								padding: 20px;
+								transform: rotateY(180deg);
+								text-align: left;
+								overflow-y: auto; /* Permet de faire défiler le texte si besoin */
+							}
+							.option-block .back h4 {
+								margin-top: 10px;
+								text-decoration: underline;
+							}
+							.option-block .back ul {
+								margin: 0;
+								padding: 0;
+								list-style: none;
+							}
+							.option-block .back ul li {
+								margin-top: 5px;
+							}
+							.option-block:hover .front {
+								transform: rotateY(180deg);
+							}
+							.option-block:hover .back {
+								transform: rotateY(0);
+							}
+						</style>
+
 
 						<!-- Compétences Acquises -->
 						<div class="row animate-box" data-animate-effect="fadeInRight">
@@ -1243,10 +1213,19 @@
 							padding: 50px 0;
 							border-radius: 8px;
 							box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+							text-align: center;
+							padding: 20px;
+							background-color: #f0f4f8;
 						}
 
 						.colorlib-heading {
 							color: #173b6c;
+							text-align: center;
+							padding: 40px;
+							background-color: #f0f4f8;
+							white-space: nowrap; /* Empêche le retour à la ligne */
+							width: 100%; /* Ajuste la largeur pour occuper tout l'espace disponible */
+							max-width: 100%; /* S'assure que la largeur n'est pas limitée */
 						}
 
 						h3 {
@@ -1273,6 +1252,7 @@
 						}
 					</style>
 				</section>
+
 
 
 
@@ -1320,29 +1300,30 @@
 							</div>
 							<script src="js/exjs.js"></script>
 						</div>
-					</section>
-		</div><!-- end:colorlib-main -->
+				</section>
+			</div><!-- end:colorlib-main -->
 			</div><!-- end:container-wrap -->
 		</div><!-- end:colorlib-page -->
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+			<!-- jQuery -->
+			<script src="js/jquery.min.js"></script>
+			<!-- jQuery Easing -->
+			<script src="js/jquery.easing.1.3.js"></script>
+			<!-- Bootstrap -->
+			<script src="js/bootstrap.min.js"></script>
+			<!-- Waypoints -->
+			<script src="js/jquery.waypoints.min.js"></script>
+			<!-- Flexslider -->
+			<script src="js/jquery.flexslider-min.js"></script>
+			<!-- Owl carousel -->
+			<script src="js/owl.carousel.min.js"></script>
+			<!-- Counters -->
+			<script src="js/jquery.countTo.js"></script>
 
 
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+			<!-- MAIN JS -->
+			<script src="js/main.js"></script>
+
 
 	</body>
 </html>
