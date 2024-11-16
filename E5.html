@@ -221,6 +221,25 @@
             <li>Dépannage informatique et assistance aux utilisateurs</li>
             <li>Gestion de projet et travail en équipe</li>
         </ul>
+        <!-- Documents annexes -->
+        <div class="section">
+            <h2>Documents annexes</h2>
+            <div class="document-link available">
+                <span>Tableau de Synthèse - Épreuve E4</span>
+                <a href="pdf/Synthèse%20Epreuve%20E5%202025.xlsx" target="_blank" style="color: white;">
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+            <div class="document-link locked">
+                <span>Attestation de stage n°1 (2023)</span>
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="document-link locked">
+                <span>Attestation de stage n°2 (2024)</span>
+                <i class="fas fa-lock"></i>
+            </div>
+        </div>
+
     </div>
     <!-- Ajout d'une section pour l'animation en fond -->
     <div id="animated-background"></div>
@@ -257,6 +276,43 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        /* Styles pour les documents annexes */
+        .document-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .document-link.available {
+            background-color: #2a5298;
+        }
+
+        .document-link.locked {
+            background-color: #6c757d;
+            color: #dcdcdc;
+        }
+
+        .document-link i {
+            font-size: 1.2em;
+        }
+
+        .document-link:hover {
+            opacity: 0.9;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #1c92d2;
+        }
+
     </style>
 
     <!-- Particles.js pour l'animation de particules -->

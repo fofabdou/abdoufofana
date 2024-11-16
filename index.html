@@ -631,6 +631,136 @@
 						</div>
 					</div>
 				</div>
+
+				<section class="tools">
+					<h2>- Outils/Logiciels utilisés ⚙️</h2>
+					<p>Les différents outils et logiciels que j'ai rencontrés et utilisés lors de ma formation.</p>
+
+					<div class="carousel">
+						<!-- Les cartes défilantes -->
+						<div class="carousel-track">
+							<div class="tool-card">
+								<img src="images/Cisco.jpg" alt="Cisco CCNA">
+								<h3>CISCO - CCNA</h3>
+								<p>
+									<b>Cisco Career Certifications est un programme de certification professionnelle de la société Cisco Systems.</b>
+								</p>
+							</div>
+							<div class="tool-card">
+								<img src="images/azure.png" alt="Microsoft Azure">
+								<h3>Microsoft Azure</h3>
+								<p>
+									<b>Microsoft Azure est la plate-forme applicative en nuage de « cloud computing » de Microsoft.</b>
+								</p>
+							</div>
+							<div class="tool-card">
+								<img src="images/vmware.jpg" alt="VMware">
+								<h3>VMware</h3>
+								<p>
+									<b>VMware vSphere est la plate-forme de virtualisation leader pour la création d'infrastructures de Cloud Computing. </b>
+								</p>
+							</div>
+							<div class="tool-card">
+								<img src="images/putty.png" alt="PuTTY">
+								<h3>PuTTY</h3>
+								<p>
+									<b>PuTTY est un émulateur de terminal pour Windows permettant la connexion à une machine distante par SSH. </b>
+								</p>
+							</div>
+							<div class="tool-card">
+								<img src="images/github.png" alt="GitHub">
+								<h3>GitHub</h3>
+								<p>
+									<b>GitHub est une plateforme de collaboration pour le développement de projets open source et privés.</b>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<style>
+						/* Section globale */
+						.tools {
+							text-align: center;
+							padding: 40px 20px;
+							background-color: #f5faff;
+						}
+
+						.tools h2 {
+							font-size: 2rem;
+							color: #003d91;
+							margin-bottom: 10px;
+						}
+
+						.tools p {
+							font-size: 1.2rem;
+							color: #555;
+							margin-bottom: 20px;
+						}
+
+						/* Carousel */
+						.carousel {
+							overflow: hidden; /* Cache les éléments en dehors de la vue */
+							position: relative;
+							max-width: 90%;
+							margin: 0 auto;
+						}
+
+						.carousel-track {
+							display: flex;
+							gap: 20px;
+							animation: scroll 15s linear infinite; /* Animation pour défiler */
+						}
+
+						@keyframes scroll {
+							0% {
+								transform: translateX(0);
+							}
+							100% {
+								transform: translateX(-100%);
+							}
+						}
+
+						/* Style des cartes */
+						.tool-card {
+							flex: 0 0 auto; /* Les cartes restent en ligne */
+							width: 300px; /* Taille de la carte */
+							background: white;
+							border-radius: 10px;
+							box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+							padding: 20px;
+							text-align: center;
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							align-items: center;
+						}
+
+						/* Agrandir les images */
+						.tool-card img {
+							max-width: 180px; /* Augmenter la taille maximale des images */
+							height: auto; /* Garder les proportions */
+							margin-bottom: 20px;
+						}
+
+						/* Titre des cartes */
+						.tool-card h3 {
+							font-size: 1.6rem; /* Légèrement plus grand pour équilibrer avec les images */
+							color: #003d91;
+							margin-bottom: 10px;
+						}
+
+						/* Texte des cartes */
+						.tool-card p {
+							font-size: 1rem;
+							color: #555;
+							line-height: 1.4; /* Améliorer la lisibilité */
+						}
+					</style>
+				</section>
+
+
+
+
 			</section>
 				<section class="colorlib-education" data-section="education">
 					<div class="colorlib-narrow-content">
