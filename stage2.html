@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation E5 - Entreprise et Missions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animation de fond */
+        #animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #1c92d2, #f2fcfe);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-popup {
+            display: inline-block;
+            background-color: #1c92d2;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-popup:hover {
+            background-color: #155d8a;
+            transform: scale(1.05);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 999;
+            width: 90%;
+            height: 90%;
+        }
+
+        .popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: red;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+        /* Section gauche */
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section droite */
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section h3 {
+            color: #1c92d2;
+            text-decoration: underline;
+        }
+
+        .right-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .right-section ul li {
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Animation de fond -->
+
+<div class="container">
+    <!-- Présentation de l'entreprise -->
+    <div class="section">
+        <h2>Présentation de l'Association Educoeurdi</h2>
+        <p>
+            EDUC’OEURDI est une association loi 1901 dont l’objet est la mise à disposition de matériels informatiques
+            pour des populations éloignées de l’équipement en raison de difficultés budgétaires.
+            Notre raison d’être est d’aider ces personnes en leur fournissant l’informatique nécessaire à leur apprentissage
+            (écoles, collèges, lycées, universités, centres et associations acteurs de l’alphabétisation).
+        </p>
+    </div>
+
+    <!-- Photo de l'entreprise -->
+    <div class="container">
+        <div class="left-section">
+
+            <img src="images/educoeurdi.png" alt="association educoeurdi">
+        </div>
+        <div class="right-section">
+            <h3>Informations de l'établissement :</h3>
+            <ul>
+                <li><strong>Dénomination :</strong> Association Educoeurdi</li>
+                <li><strong>Forme juridique :</strong> association loi 1901</li>
+                <li><strong>Adresse :</strong> 65 boulevard Ney, 75018 Paris</li>
+                <li><strong>Effectif :</strong> 2 employés</li>
+                <li><strong>Mission :</strong> Réemploi et redistribution de matériel informatique</li>
+            </ul>
+            <a href="#" class="btn-popup" onclick="openPopup()">Voir la présentation PowerPoint</a>
+        </div>
+    </div>
+
+    <!-- Pop-up pour le PowerPoint -->
+    <div class="popup" id="popup">
+        <div class="popup-close" onclick="closePopup()">✖</div>
+        <iframe src="pdf/Presentation_Educoeurdi.pdf"></iframe>
+    </div>
+
+    <!-- Missions réalisées -->
+    <div class="section">
+        <h2>Présentation des missions réalisées</h2>
+        <p>Au cours de mon stage, j'ai été impliqué dans plusieurs missions :</p>
+        <ul>
+            <li>Configuration d’un serveur Dell PowerEdge R620, avec mise en place d’un RAID 5 et installation de Windows Server 2022.</li>
+            <li>Installation et configuration d’un NAS Synology utilisé comme serveur PXE pour permettre l’installation automatisée de Windows 10 Pro sur le réseau.</li>
+            <li>Interventions et dépannage chez les clients : réparations de PC et imprimantes, résolution de pannes matérielles et logicielles.</li>
+            <li>Vérification et remplacement des composants d'unités centrales et PC (battérie, RAM, Disk).</li>
+            <li>Étiquetage et classification du matériel informatique pour la revente.</li>
+        </ul>
+    </div>
+
+    <!-- Bilan et compétences acquises -->
+    <div class="section">
+        <h2>Bilan et compétences acquises</h2>
+        <p>Ce stage a été une expérience très enrichissante. J'ai acquis des compétences essentielles dans les domaines suivants :</p>
+        <ul>
+            <h3>Compétences Techniques :</h3>
+            <ul>
+                <li>Maintenance et réparation matérielle des PC</li>
+                <li>Gestion et revalorisation du matériel informatique</li>
+                <li>Déploiement et Administration d’un serveur Dell PowerEdge R620 pour window serveur 2022 afin de mettre en place un AD</li>
+                <li>Automatisation du déploiement de systèmes d’exploitation</li>
+            </ul>
+            <h3>Compétences en Gestion et Commerce :</h3>
+            <ul>
+                <li>Publication et gestion d’annonces sur Facebook Market</li>
+                <li>Communication et négociation avec les acheteurs potentiels</li>
+            </ul>
+            <h3>Compétences Organisationnelles et Relationnelles :</h3>
+            <ul>
+                <li>Travail en équipe et coordination avec les réparateurs</li>
+                <li>Adaptabilité aux différentes tâches et gestion des imprévus</li>
+            </ul>
+        <!-- Documents annexes -->
+        <div class="section">
+            <h2>Documents annexes</h2>
+            <div class="document-link available">
+                <span>Tableau de Synthèse - Épreuve E4</span>
+                <a href="pdf/Synthèse%20Epreuve%20E5%202025.xlsx" target="_blank" style="color: white;">
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+
+            <div class="document-link locked">
+                <span>Attestation de stage n°2 (2024)</span>
+                <i class="fas fa-lock"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Ajout d'une section pour l'animation en fond -->
+    <div id="animated-background"></div>
+
+    <!-- Styles personnalisés pour l'affichage des miniatures et l'animation -->
+    <style>
+        /* Style pour le fond animé */
+        #animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #000000, #ff8000);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        /* Animation de gradient */
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .portfolio-images img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Styles pour les documents annexes */
+        .document-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .document-link.available {
+            background-color: #2a5298;
+        }
+
+        .document-link.locked {
+            background-color: #6c757d;
+            color: #dcdcdc;
+        }
+
+        .document-link i {
+            font-size: 1.2em;
+        }
+
+        .document-link:hover {
+            opacity: 0.9;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #1c92d2;
+        }
+
+    </style>
+
+    <!-- Particles.js pour l'animation de particules -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("animated-background", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</div>
+
+<!-- Script pour gérer le pop-up -->
+<script>
+    function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+</body>
+</html>

@@ -61,42 +61,41 @@
 					<h1 id="colorlib-logo"><a href="index.html">Abdou FOFANA</a></h1>
 					<span class="position"><a href="#">ÉTUDIANT EN BTS SIO - OPTION SISR</a></span>
 				</div>
-
-
 				<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li><a href="#" data-nav-section="home"><i class="icon-home"></i> Accueil</a></li>
-						<li><a href="#" data-nav-section="about"><i class="icon-user"></i> Profil</a></li>
-						<li><a href="#" data-nav-section="education"><i class="icon-graduation-cap"></i> Parcours</a></li>
-						<li><a href="#" data-nav-section="skills"><i class="icon-desktop"></i> Compétences</a></li>
-						<li><a href="#" data-nav-section="experience"><i class="icon-briefcase"></i> Expèrience Pro</a></li>
-						<li><a href="#" data-nav-section="work"><i class="icon-code"></i> Projets</a></li>
-						<li><a href="#" data-nav-section="bts"><i class="icon-building"></i> BTS SIO</a></li>
-						<div>
-							<li>
-								<a href="#" onclick="toggleSubmenu(event)"><i class="icon-book"></i> Épreuves</a>
-								<ul class="submenu" style="display: none;">
-									<li><a href="E5.html" target="_blank"><i class="icon-file-text"></i> Épreuve E5</a></li>
-									<li><a href="e6.html"><i class="icon-file-text"></i> Épreuve E6</a></li>
-								</ul>
-							</li>
-							<script>
-								// Fonction pour afficher/masquer les sous-menus
-								function toggleSubmenu(event) {
-									event.preventDefault(); // Empêche le lien par défaut de s'exécuter
-									const submenu = event.target.nextElementSibling; // Sélectionne le sous-menu associé
-									if (submenu && submenu.classList.contains('submenu')) {
-										const isVisible = submenu.style.display === 'block';
-										submenu.style.display = isVisible ? 'none' : 'block'; // Basculer entre afficher et masquer
+					<div id="navbar" class="collapse">
+						<ul>
+							<li><a href="#" data-nav-section="home"><i class="icon-home"></i> Accueil</a></li>
+							<li><a href="#" data-nav-section="about"><i class="icon-user"></i> Profil</a></li>
+							<li><a href="#" data-nav-section="education"><i class="icon-graduation-cap"></i> Parcours</a></li>
+							<li><a href="#" data-nav-section="skills"><i class="icon-desktop"></i> Compétences</a></li>
+							<li><a href="#" data-nav-section="experience"><i class="icon-briefcase"></i> Expèrience Pro</a></li>
+							<li><a href="#" data-nav-section="work"><i class="icon-code"></i> Projets en Formation</a></li>
+							<li><a href="#" data-nav-section="work_entreprise"><i class="icon-code"></i> Projets en Entreprise</a></li>
+							<li><a href="#" data-nav-section="bts"><i class="icon-building"></i> BTS SIO</a></li>
+							<div>
+								<li>
+									<a href="#" onclick="toggleSubmenu(event)"><i class="icon-book"></i> Épreuves</a>
+									<ul class="submenu" style="display: none;">
+										<li><a href="stage1.html" target="_blank"><i class="icon-file-text"></i> Épreuve E5</a></li>
+										<li><a href="e6.html"><i class="icon-file-text"></i> Épreuve E6</a></li>
+									</ul>
+								</li>
+								<script>
+									// Fonction pour afficher/masquer les sous-menus
+									function toggleSubmenu(event) {
+										event.preventDefault(); // Empêche le lien par défaut de s'exécuter
+										const submenu = event.target.nextElementSibling; // Sélectionne le sous-menu associé
+										if (submenu && submenu.classList.contains('submenu')) {
+											const isVisible = submenu.style.display === 'block';
+											submenu.style.display = isVisible ? 'none' : 'block'; // Basculer entre afficher et masquer
+										}
 									}
-								}
-							</script>
-						</div>
+								</script>
+							</div>
 
-						<li><a href="#" data-nav-section="contact"><i class="icon-envelope"></i> Contact</a></li>
-					</ul>
-				</div>
+							<li><a href="#" data-nav-section="contact"><i class="icon-envelope"></i> Contact</a></li>
+						</ul>
+					</div>
 					<script>
 						document.querySelectorAll('.submenu > li > a').forEach(link => {
 							link.addEventListener('click', () => {
@@ -104,7 +103,7 @@
 							});
 						});
 					</script>
-			</nav>
+				</nav>
 				<!-- JavaScript pour le menu déroulant -->
 				<script>
 					function toggleSubmenu(event) {
@@ -119,18 +118,17 @@
 				</script>
 
 				<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
-
-		</aside>
+					<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
+					<ul>
+						<li><a href="#"><i class="icon-facebook2"></i></a></li>
+						<li><a href="#"><i class="icon-twitter2"></i></a></li>
+						<li><a href="#"><i class="icon-instagram"></i></a></li>
+						<li><a href="#"><i class="icon-linkedin2"></i></a></li>
+					</ul>
+				</div>
+			</aside>
 
 		<div id="colorlib-main">
 			<div>
@@ -235,8 +233,8 @@
 											</div>
 											<div class="col-lg-6">
 												<ul>
-													<li><i class="bi bi-chevron-right"></i> <strong>Telephone :</strong> <span><a style="color: black" href="tel:0767579036">06 66 61 61 68</a></span></li>
-													<li><i class="bi bi-chevron-right"></i> <strong>Email :</strong> <span><a style="color: black" href="mailto:nathan.serror@gmail.com"></a></span></li>
+													<li><i class="bi bi-chevron-right"></i> <strong>Telephone :</strong> <span><a style="color: black" href="tel:0666616168">06 66 61 61 68</a></span></li>
+													<li><i class="bi bi-chevron-right"></i> <strong>Email :</strong> <span><a style="color: black" href="mailto:fof.abdou001@gmail.com">fof.abdou001@gmail.com</a></span></li>
 
 												</ul>
 											</div>
@@ -244,32 +242,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Mastérisation</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Migration des postes</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>déploiement</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Kali linux</h3>
-									</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
 				</div>
@@ -321,6 +294,33 @@
 								supplémentaires me permettant d'approfondir mes connaissances et compétences.
 							</p>
 						</div>
+
+						<div class="row">
+							<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+								<div class="services color-1">
+									<span class="icon2"><i class="icon-bulb"></i></span>
+									<h3>Mastérisation</h3>
+								</div>
+							</div>
+							<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+								<div class="services color-2">
+									<span class="icon2"><i class="icon-globe-outline"></i></span>
+									<h3>Administration et déploiement de Serveur</h3>
+								</div>
+							</div>
+							<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
+								<div class="services color-3">
+									<span class="icon2"><i class="icon-data"></i></span>
+									<h3>Maintenance pcs & imprimantes</h3>
+								</div>
+							</div>
+							<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+								<div class="services color-4">
+									<span class="icon2"><i class="icon-phone3"></i></span>
+									<h3>Virtualisation</h3>
+								</div>
+							</div>
+						</div>
 						<!-- Section Diplômes et Certifications -->
 						<section class="colorlib-skills" data-section="certifications">
 							<div class="colorlib-narrow-content">
@@ -341,12 +341,28 @@
 											<li data-filter=".filter-cnil">MOOC RGPD CNIL</li>
 											<li data-filter=".filter-sololearn">INPI</li>
 											<li data-filter=".filter-google">GOOGLE</li>
+											<li data-filter=".filter-tableau">T. Compétences</li>
 										</ul>
 									</div>
 								</div>
 
 								<!-- Cartes des certifications -->
 								<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+									<!-- Tableau de compétences -->
+
+									<div class="col-md-4 portfolio-item filter-tableau">
+										<div class="portfolio-wrap" style="box-shadow: 8px 8px 10px rgba(0,0,0,0.5); border-radius: 10px;">
+											<img src="pdf/img.png" class="img-fluid" alt="Tableau competence">
+											<div class="portfolio-links" style="padding: 15px;">
+												<a href="javascript:void(0);" onclick="openModal('Tableau competence', 'pdf/img.png', 'Ce tableau permet de visualiser concrètement les compétences que j\'ai acquises, les domaines dans lesquels je me suis amélioré, et les objectifs que je dois encore atteindre pour consolider mes aptitudes.')">
+													<i class="bi bi-eye-fill"></i> Détails
+												</a>
+												<a href="pdf/tableau.pdf" target="_blank"><i class="bi bi-download"></i> Ouvrir en PDF</a>
+											</div>
+										</div>
+									</div>
+
 									<!-- Blocs pour LINUX -->
 									<div class="col-md-4 portfolio-item filter-linux">
 										<div class="portfolio-wrap" style="box-shadow: 8px 8px 10px rgba(0,0,0,0.5); border-radius: 10px;">
@@ -913,13 +929,13 @@
 					</div>
 				</section>
 
-
-			<section class="colorlib-work" data-section="work">
+			<!-- Section projet en formation-->
+				<section class="colorlib-work" data-section="work">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
 							<span class="heading-meta">Mes Projets</span>
-							<h2 class="colorlib-heading animate-box">Mes Réalisations</h2>
+							<h2 class="colorlib-heading animate-box">Mes Réalisations en Formation</h2>
 						</div>
 					</div>
 					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
@@ -929,7 +945,6 @@
 								<span><a href="#" class="filter" data-filter=".filter-site">Site Internet</a></span>
 								<span><a href="#" class="filter" data-filter=".filter-helport">Projets en Commun</a></span>
 								<span><a href="#" class="filter" data-filter=".filter-smartcity">Travaux Pratiques</a></span>
-								<span><a href="#" class="filter" data-filter=".filter-tableau">Tableau de compétence</a></span>
 							</p>
 						</div>
 					</div>
@@ -974,18 +989,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 portfolio-item filter-tableau" style="display: block;">
-							<div class="project-card">
-								<h3>Tableau de compétences</h3>
-								<div class="project-image-container">
-									<img src="pdf/img.png" alt="Portfolio Personnel" class="img-fluid">
-								</div>
-								<div class="buttons">
-									<a href="pdf/img.png" class="btn-view" onclick="event.preventDefault(); openPopup('pdf/img.png', 'Ce tableau permet de visualiser concrètement les compétences que j\'ai acquises, les domaines dans lesquels je me suis amélioré, et les objectifs que je dois encore atteindre pour consolider mes aptitudes.');"><i class="icon-eye"></i> Voir</a>
-									<a href="pdf/Synthèse%20Epreuve%20E5%202025.xlsx" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
-								</div>
-							</div>
-						</div>
+
 						<div class="col-md-4 portfolio-item filter-smartcity" style="display: block;">
 							<div class="project-card">
 								<h3>RIP & OSPF</h3>
@@ -1002,8 +1006,87 @@
 				</div>
 			</section>
 
+			<!-- Section projet en entreprise-->
+			<section class="colorlib-work" data-section="work_entreprise">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Portfolio</span>
+							<h2 class="colorlib-heading animate-box">Mes Réalisations en Entreprise</h2>
+						</div>
+					</div>
+					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12">
+							<p class="work-menu">
+								<span><a href="#" class="filter active" data-filter="*">Tous</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-stage1">Stage 1</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-stage2">stage 2</a></span>
+								<span><a href="#" class="filter" data-filter=".filter-mission">missions en période de stage 1 et 2 </a></span>
+							</p>
+						</div>
+					</div>
+
+					<div class="row portfolio-container">
+
+						<!--presentation établissement d'accueil premier stage -->
+
+						<div class="col-md-4 portfolio-item filter-stage1" style="display: block;">
+							<div class="project-card">
+								<h3>1ère Période de stage : Mairie de Meudon</h3>
+								<div class="project-image-container">
+									<img src="images/stage1.png" alt="stage 1" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/stage1.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/stage1.png', ' ');"><i class="icon-eye"></i> Voir</a>
+									<a href="stage1.html" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 portfolio-item filter-stage2" style="display: block;">
+							<div class="project-card">
+								<h3> 2ᵉ Période de stage : Association Éducoeurdi</h3>
+								<div class="project-image-container">
+									<img src="images/educ.png" alt="Portfolio Personnel" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/educ.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/educ.png', ' ');"><i class="icon-eye"></i> Voir</a>
+									<a href="stage2.html" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Autres exemples de projets -->
+						<div class="col-md-4 portfolio-item filter-mission" style="display: block;">
+							<div class="project-card">
+								<h3>Réalisations à l'espace numérique de Meudon</h3>
+								<div class="project-image-container">
+									<img src="images/mission1.png" alt="missions en periode de stage" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/mission1.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/mission1.png', 'Ici ce trouve l\'ensemble des taches que j\'ai réaliser en période de stage à l\'espace numérique de Meudon (cliquez sur voir plus pour en savoir plus)');"><i class="icon-eye"></i> Voir</a>
+									<a href="missionsEspace.html" class="btn-more" target="_blank"><i class="icon-link"></i> En savoir plus</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 portfolio-item filter-mission" style="display: block;">
+							<div class="project-card">
+								<h3>Réalisations à Educoeurdi</h3>
+								<div class="project-image-container">
+									<img src="images/mission2.png" alt="realisations à educoeurdi" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/mission2.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/mission2.png', 'Travaux réalisés pendant mon stage à l\'association éducoeurdi (pour en savoir plus cliquez sur voir plus)');"><i class="icon-eye"></i> Voir</a>
+									<a href="missionsEdu.html" class="btn-more" target="_blank"><i class="icon-link"></i> documentation</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- Popup HTML Structure -->
-			<div id="imagePopup" class="popup-overlay">
+				<div id="imagePopup" class="popup-overlay">
 				<div class="popup-content">
 					<span class="close-btn" onclick="closePopup()">&times;</span>
 					<img id="popupImage" src="" alt="Image" style="width: 100%; height: auto;">
@@ -1012,7 +1095,7 @@
 			</div>
 
 			<!-- Styles CSS -->
-			<style>
+				<style>
 				.work-menu span a {
 					color: #ffd700;
 					font-weight: bold;
@@ -1025,7 +1108,7 @@
 				.portfolio-container {
 					display: flex;
 					flex-wrap: wrap;
-					gap: 20px;
+					gap: 50px;
 				}
 
 				.portfolio-item {
@@ -1132,7 +1215,7 @@
 			</style>
 
 			<!-- JavaScript pour le filtrage et le popup -->
-			<script>
+				<script>
 				document.querySelectorAll('.filter').forEach(function(filterLink) {
 					filterLink.addEventListener('click', function(e) {
 						e.preventDefault();
@@ -1163,6 +1246,8 @@
 					document.getElementById("imagePopup").style.display = "none";
 				}
 			</script>
+
+
 				<section class="colorlib-bts-sio" data-section="bts">
 					<div class="colorlib-narrow-content">
 						<div class="row">
