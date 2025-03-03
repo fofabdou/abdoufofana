@@ -64,7 +64,7 @@
 				<nav id="colorlib-main-menu" role="navigation" class="navbar">
 					<div id="navbar" class="collapse">
 						<ul>
-							<li><a href="#" data-nav-section="home"><i class="icon-home"></i> Accueil</a></li>
+							<li><a href="#" data-nav-section="home"> Accueil</a></li>
 							<li><a href="#" data-nav-section="about"><i class="icon-user"></i> Profil</a></li>
 							<li><a href="#" data-nav-section="education"><i class="icon-graduation-cap"></i> Parcours</a></li>
 							<li><a href="#" data-nav-section="skills"><i class="icon-desktop"></i> Compétences</a></li>
@@ -72,8 +72,15 @@
 							<li><a href="#" data-nav-section="work"><i class="icon-code"></i> Projets en Formation</a></li>
 							<li><a href="#" data-nav-section="work_entreprise"><i class="icon-code"></i> Projets en Entreprise</a></li>
 							<li><a href="#" data-nav-section="bts"><i class="icon-building"></i> BTS SIO</a></li>
+							<li><a href="veille.html">Veille Technologique</a></li>
 							<li><a href="#" data-nav-section="contact"><i class="icon-envelope"></i> Contact</a></li>
 						</ul>
+						<style>
+							i a img {
+								width: 8px; /* Ajuste la taille selon ton besoin */
+								height: 8px; /* Maintient les proportions de l'image */
+							}
+						</style>
 					</div>
 					<script>
 						document.querySelectorAll('.submenu > li > a').forEach(link => {
@@ -101,7 +108,7 @@
 						Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">FOFANA Abdou</a>
 	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </span> <span>Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p> -->
 					<ul>
-						<li><a href="#"><i class="icon-facebook2"></i></a></li>
+						<li><a href="#"><img src="images/facebook.png" style="width: 12px; height: auto" alt=""></a></li>
 						<li><a href="#"><i class="icon-twitter2"></i></a></li>
 						<li><a href="#"><i class="icon-instagram"></i></a></li>
 						<li><a href="#"><i class="icon-linkedin2"></i></a></li>
@@ -931,6 +938,20 @@
 					</div>
 
 					<div class="row portfolio-container">
+
+						<!-- projet active directory -->
+						<div class="col-md-4 portfolio-item filter-ad" style="display: block;">
+							<div class="project-card">
+								<h3>Services (AD, DHCP, DNS, ...) sur window server 2022</h3>
+								<div class="project-image-container">
+									<img src="images/AD.png" alt="travaux pratique" class="img-fluid">
+								</div>
+								<div class="buttons">
+									<a href="images/AD.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/AD.png', 'Travaux réalisés sur VMware avec window server 2022 (rôles AD,WDS, DNS, DHCP, continuité de services, ...voir plus');"><i class="icon-eye"></i> Voir</a>
+									<a href="pdf/AD.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> documentation</a>
+								</div>
+							</div>
+						</div>
 						<!-- Exemple de projet Site Internet -->
 						<div class="col-md-4 portfolio-item filter-site" style="display: block;">
 							<div class="project-card">
@@ -944,6 +965,8 @@
 								</div>
 							</div>
 						</div>
+
+						<!-- projet veliko -->
 						<div class="col-md-4 portfolio-item filter-helport" style="display: block;">
 							<div class="project-card">
 								<h3>Projet Véliko</h3>
@@ -957,7 +980,7 @@
 							</div>
 						</div>
 
-						<!-- Autres exemples de projets -->
+						<!-- projet tech Inovation -->
 						<div class="col-md-4 portfolio-item filter-helport" style="display: block;">
 							<div class="project-card">
 								<h3>Projet @tech Innovation</h3>
@@ -980,19 +1003,6 @@
 								<div class="buttons">
 									<a href="pdf/RIP.png" class="btn-view" onclick="event.preventDefault(); openPopup('pdf/RIP.png', 'Travaux réalisés sur des matériaux physiques (routeurs, pcs) afin de mieux cerner les protocols de routage dynamique et la différence entre routage statique et dynamique');"><i class="icon-eye"></i> Voir</a>
 									<a href="pdf/Abdou_FOFANA%20Compte%20Rendu%20routage%20statique%20et%20OSPF.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> documentation</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4 portfolio-item filter-ad" style="display: block;">
-							<div class="project-card">
-								<h3>Services (AD, DHCP, DNS, ...) sur window server 2022</h3>
-								<div class="project-image-container">
-									<img src="images/AD.png" alt="travaux pratique" class="img-fluid">
-								</div>
-								<div class="buttons">
-									<a href="images/AD.png" class="btn-view" onclick="event.preventDefault(); openPopup('images/AD.png', 'Travaux réalisés sur VMware avec window server 2022 (rôles AD,WDS, DNS, DHCP, continuité de services, ...voir plus');"><i class="icon-eye"></i> Voir</a>
-									<a href="pdf/AD.pdf" class="btn-more" target="_blank"><i class="icon-link"></i> documentation</a>
 								</div>
 							</div>
 						</div>
