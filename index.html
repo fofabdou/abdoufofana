@@ -85,6 +85,21 @@
 							<li><a href="veille.html"><img src="images/iconeVeille.jpg" style="width: 20px; height: auto" alt="">Veille Technologique</a></li>
 							<li><a href="#" data-nav-section="contact"><img src="images/iconeContact.jpg" style="width: 20px; height: auto" alt=""> Contact</a></li>
 						</ul>
+						<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							let veilleLink = document.querySelector("a[href='veille.html']");
+
+							if (veilleLink) {
+								veilleLink.style.cursor = "pointer"; // S'assure que le curseur est bien en mode clic
+
+								veilleLink.addEventListener("click", function(event) {
+									event.preventDefault(); // Empêche un comportement inattendu
+									window.location.href = this.href; // Redirige vers la page
+								});
+							}
+						});
+					</script>
+
 					</div>
 					<script>
 						document.querySelectorAll('.submenu > li > a').forEach(link => {
