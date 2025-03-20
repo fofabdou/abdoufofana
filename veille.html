@@ -7,71 +7,184 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
-        }
-        h1 {
             text-align: center;
-            color: #333;
         }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .banner {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #history-feed, #popular-articles {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: left;
+            font-size: 14px;
+        }
+
         #rss-feed {
             background: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 20px auto;
+            width: 60%;
         }
-        #rss-list {
+
+        #rss-list, #history-list, #popular-list {
             list-style: none;
             padding: 0;
         }
-        #rss-list li {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+
+        #rss-list li, #popular-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            background: #f9f9f9;
+            border-left: 5px solid #007bff;
         }
-        #rss-list a {
+
+        #rss-list a, #history-list a, #popular-list a {
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
+            font-size: 16px;
         }
-        #rss-list a:hover {
-            text-decoration: underline;
+
+        .article-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        p.date {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
-<h1>Veille Technologique - Innovations pour les Entreprises</h1>
+<header>
+    Veille Technologique - Innovations pour les Entreprises
+</header>
 
-<div id="rss-feed">
-    <h3>Dernières actualités</h3>
-    <ul id="rss-list"></ul>
+<img src="images/eau.jpg" alt="Bannière Technologique" class="banner">
+
+<div id="content">
+    <div id="history-feed">
+        <h3>Articles Lus</h3>
+        <ul id="history-list"></ul>
+    </div>
+
+    <div id="rss-feed">
+        <h2>Dernières actualités</h2>
+        <ul id="rss-list"></ul>
+    </div>
+
+    <div id="popular-articles">
+        <h3>Articles Populaires</h3>
+        <ul id="popular-list"></ul>
+    </div>
 </div>
 
 <script>
     async function fetchRSS() {
-        const url = "https://api.rss2json.com/v1/api.json?rss_url=https://www.zdnet.fr/feeds/rss/actualites/"; // Flux tech entreprise
-
+        const url = "https://api.rss2json.com/v1/api.json?rss_url=https://www.zdnet.fr/feeds/rss/actualites/";
         try {
             const response = await fetch(url);
             const data = await response.json();
-
             const rssList = document.getElementById("rss-list");
             rssList.innerHTML = "";
 
             data.items.slice(0, 5).forEach(item => {
                 const li = document.createElement("li");
-                li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.pubDate}</p>`;
+                const imageUrl = item.enclosure?.link || "https://source.unsplash.com/600x300/?tech";
+                li.innerHTML = `
+                    <a href="${item.link}" target="_blank" class="article-link" data-title="${item.title}" data-link="${item.link}">
+                        ${item.title}
+                    </a>
+                    <p class="date">${new Date(item.pubDate).toLocaleDateString()}</p>
+                    <img src="${imageUrl}" class="article-image" alt="Illustration de l'article">
+                `;
+                li.querySelector(".article-link").addEventListener("click", function () {
+                    saveToHistory(this.dataset.title, this.dataset.link);
+                });
                 rssList.appendChild(li);
             });
+            fetchPopularArticles();
         } catch (error) {
             console.error("Erreur lors du chargement du flux RSS :", error);
         }
     }
 
-    document.addEventListener("DOMContentLoaded", fetchRSS);
+    function saveToHistory(title, link) {
+        let history = JSON.parse(localStorage.getItem("history")) || [];
+        if (!history.some(item => item.link === link)) {
+            history.unshift({ title, link });
+            if (history.length > 5) history.pop();
+            localStorage.setItem("history", JSON.stringify(history));
+            displayHistory();
+        }
+    }
+
+    function displayHistory() {
+        const historyList = document.getElementById("history-list");
+        historyList.innerHTML = "";
+        let history = JSON.parse(localStorage.getItem("history")) || [];
+        history.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+            historyList.appendChild(li);
+        });
+    }
+
+    async function fetchPopularArticles() {
+        const url = "https://api.rss2json.com/v1/api.json?rss_url=https://www.silicon.fr/feed";
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const popularList = document.getElementById("popular-list");
+            popularList.innerHTML = "";
+            data.items.slice(0, 5).forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+                popularList.appendChild(li);
+            });
+        } catch (error) {
+            console.error("Erreur lors du chargement des articles populaires :", error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchRSS();
+        displayHistory();
+    });
 </script>
 
 </body>
